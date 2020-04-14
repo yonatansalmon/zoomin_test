@@ -47,7 +47,9 @@ class App extends React.Component {
     const { countries, loading } = this.state;
     return (
       <div>
-        <div className="nav-container"></div>
+        <div className="nav-container">
+          Which Country Do You Want to Visit?
+        </div>
       <div className="main_container">
         {loading ? <div>loading..</div> : <CountryList countries={countries} />}
         <FavoriteCountries />
