@@ -5,39 +5,43 @@ class CountryList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedCountries: [],
+      selectedCountriesList: [],
+      
     };
   }
 
   componentDidUpdate() {
-    console.log(this.state.selectedCountries);
+    console.log(this.state.selectedCountriesList);
     window.localStorage.setItem(
       "savedCountries",
-      JSON.stringify(this.state.selectedCountries)
+      JSON.stringify(this.state.selectedCountriesList)
     );
   }
 
   checkItem(e) {
     const selectedCountry = e.target.id;
     this.setState((prevState) => ({
-      selectedCountries: [...prevState.selectedCountries, selectedCountry],
+      selectedCountriesList: [...prevState.selectedCountriesList, selectedCountry],
+      selectedCountry:selectedCountry
     }));
   }
 
   render() {
     const { countries } = this.props;
+    const { selectedCountry, selectedCountriesList } = this.state;
     return (
+      <div>
       <div className="table_container">
         <table className="darkTable">
           <thead>
             <tr>
               <th >Countries</th>
-              <th >I Want To Visit</th>
+              <th >Interested</th>
             </tr>
           </thead>
           <tbody>
             {countries.map((country) => (
-              <tr key={country.id}>
+              <tr key={country.name}>
                 <td>{country.name}</td>
 
                 <td>
@@ -51,7 +55,13 @@ class CountryList extends React.Component {
             ))}
           </tbody>
         </table>
+
       </div>
+    
+      <div className="selected_countries"><span>Selected:</span> {selectedCountriesList + ", "}</div>
+
+            </div>
+     
     );
   }
 }

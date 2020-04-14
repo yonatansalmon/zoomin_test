@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
+*{
+  font-family: "Josefin Sans", sans-serif;
+}
  
  body{
   background-color: #15202b;
@@ -45,8 +48,6 @@
 }
 
 
-
-
 .main_container{
   display: flex;
   justify-content: space-evenly;
@@ -61,7 +62,6 @@
   background: #343a40;
   border-radius: 6px;
   color: white;
-  font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
   text-align: center;
 
