@@ -1,9 +1,9 @@
 
-.table_container{
+/* .table_container{
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 .selected_countries{
     overflow-wrap: break-word;
     color:green;

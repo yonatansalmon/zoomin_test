@@ -32,7 +32,6 @@ class App extends React.Component {
       .get("https://restcountries.eu/rest/v2/regionalbloc/usan")
       .then((res) => {
         const countries = res.data;
-        console.log(countries);
         this.setState({
           countries: countries,
           loading: false,
@@ -50,7 +49,7 @@ class App extends React.Component {
         <div className="nav-container">
           Which Country Do You Want to Visit?
         </div>
-        
+
       <div className="main_container">
         {loading ? <div>loading..</div> : <CountryList countries={countries} />}
         <FavoriteCountries />

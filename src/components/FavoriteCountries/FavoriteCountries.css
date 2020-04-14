@@ -1,7 +1,11 @@
 .no_data{
     color: darkblue
 }
-
+/* .table_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
 
 table.purpleHorizon {
     border: 4px solid #792396;

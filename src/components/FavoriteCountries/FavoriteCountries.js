@@ -16,6 +16,7 @@ class FavoriteCountry extends React.Component {
   }
 
   render() {
+   
     const { savedCountries } = this.state;
     return (
       <div className="table_container">
@@ -30,8 +31,7 @@ class FavoriteCountry extends React.Component {
               <tr className="no_data">
               No data to display...
               </tr>
-            ) : (
-              
+            ) : (   
               savedCountries.map((country) => (
                 <tr key={country}>
                   <td>{country}</td>
