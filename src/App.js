@@ -1,27 +1,27 @@
 import React from "react";
 import axios from "axios";
-import "./App.css"
-import MovieList from "./components/MovieList/MovieList";
-import FavoriteMovies from "./components/FavoriteMovies/FavoriteMovies"
-
+import "./App.css";
+import CountryList from "./components/CountryList/CountryList";
+import FavoriteCountries from "./components/FavoriteCountries/FavoriteCountries";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      persons: [],
+      countries: [],
       loading: true,
     };
   }
 
   componentDidMount() {
     axios
-      .get(`https://jsonplaceholder.typicode.com/users`)
+      .get(`https://restcountries.eu/rest/v2/regionalbloc/cais`)
       .then((res) => {
-        const persons = res.data;
-        console.log(persons);
+        const countries = res.data;
+        console.log(countries);
         this.setState({
-          persons: persons, loading:false
+          countries: countries,
+          loading: false,
         });
       })
       .catch((error) => {
@@ -29,14 +29,12 @@ class App extends React.Component {
       });
   }
 
-
-
   render() {
-    const { persons, loading } = this.state;
+    const { countries, loading } = this.state;
     return (
       <div className="main_container">
-        {loading ? <div>loading..</div> : <MovieList persons={persons}/> }
-        <FavoriteMovies/>
+        {loading ? <div>loading..</div> : <CountryList countries={countries} />}
+        <FavoriteCountries />
       </div>
     );
   }

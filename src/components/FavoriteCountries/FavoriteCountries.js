@@ -1,24 +1,20 @@
 import React from "react";
 
-class MovieList extends React.Component {
+class FavoriteCountry extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      savedMovies: []
+      savedMovies: [],
     };
   }
 
-
-componentDidMount(){
-  const localStorageMovies = window.localStorage.getItem("savedMovies")
-  const savedMoviesParsed = JSON.parse(localStorageMovies) 
-  this.setState({savedMovies:savedMoviesParsed})
-}
-  
+  componentDidMount() {
+    const localStorageMovies = window.localStorage.getItem("savedCountries");
+    const savedMoviesParsed = JSON.parse(localStorageMovies);
+    this.setState({ savedMovies: savedMoviesParsed });
+  }
 
   render() {
-  
-    
     return (
       <div className="table_container">
         <table>
@@ -29,7 +25,7 @@ componentDidMount(){
           </thead>
           <tbody>
             {this.state.savedMovies.map((movie) => (
-              <tr key={movie} >
+              <tr key={movie}>
                 <td>{movie}</td>
               </tr>
             ))}
@@ -40,4 +36,4 @@ componentDidMount(){
   }
 }
 
-export default MovieList;
+export default FavoriteCountry;
