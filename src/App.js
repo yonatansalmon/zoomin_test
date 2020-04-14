@@ -1,6 +1,9 @@
 import React from "react";
 import axios from "axios";
+import "./App.css"
 import MovieList from "./components/MovieList/MovieList";
+import FavoriteMovies from "./components/FavoriteMovies/FavoriteMovies"
+
 
 class App extends React.Component {
   constructor(props) {
@@ -26,16 +29,14 @@ class App extends React.Component {
       });
   }
 
-  checkItem(e){
-    console.log(e.target.id)
-    this.setState()
-  }
+
 
   render() {
     const { persons, loading } = this.state;
     return (
-      <div>
+      <div className="main_container">
         {loading ? <div>loading..</div> : <MovieList persons={persons}/> }
+        <FavoriteMovies/>
       </div>
     );
   }
