@@ -1,32 +1,33 @@
 import React from "react";
+import "./FavoriteCountries.css";
 
 class FavoriteCountry extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      savedMovies: [],
+      savedCountries: [],
     };
   }
 
   componentDidMount() {
-    const localStorageMovies = window.localStorage.getItem("savedCountries");
-    const savedMoviesParsed = JSON.parse(localStorageMovies);
-    this.setState({ savedMovies: savedMoviesParsed });
+    const localStorageCountries = window.localStorage.getItem("savedCountries");
+    const savedCountriesParsed = JSON.parse(localStorageCountries);
+    this.setState({ savedCountries: savedCountriesParsed });
   }
 
   render() {
     return (
       <div className="table_container">
-        <table>
+        <table className="purpleHorizon">
           <thead>
             <tr>
-              <th className="checkbox_colum">Favorite Movies</th>
+              <th className="checkbox_colum">Countries You Want to Visit</th>
             </tr>
           </thead>
           <tbody>
-            {this.state.savedMovies.map((movie) => (
-              <tr key={movie}>
-                <td>{movie}</td>
+            {this.state.savedCountries.map((country) => (
+              <tr key={country}>
+                <td>{country}</td>
               </tr>
             ))}
           </tbody>

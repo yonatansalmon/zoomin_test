@@ -28,11 +28,11 @@ class CountryList extends React.Component {
     const { countries } = this.props;
     return (
       <div className="table_container">
-        <table>
+        <table className="darkTable">
           <thead>
             <tr>
-              <th className="movie_colum">Country List</th>
-              <th className="checkbox_colum">Check if You Want to Visit</th>
+              <th >Countries</th>
+              <th >I Want To Visit</th>
             </tr>
           </thead>
           <tbody>
