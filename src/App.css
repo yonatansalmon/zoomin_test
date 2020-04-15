@@ -8,6 +8,15 @@
   background-color: #15202b;
 }
 
+.error_message{
+  color:red;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
 .loading_message{
   color: green
 }

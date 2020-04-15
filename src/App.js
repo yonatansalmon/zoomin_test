@@ -74,7 +74,12 @@ class App extends React.Component {
     const { countries, loading, selectedCountries, serverError } = this.state;
 
     if (serverError) {
-      return <div style={{ color: "white" }}>{serverError}</div>;
+      return (
+        <div className="error_message">
+          Sorry... something went wrong:
+          <div>"{serverError}"</div>
+        </div>
+      );
     }
     return (
       <div>
