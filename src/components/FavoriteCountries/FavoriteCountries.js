@@ -11,7 +11,8 @@ class FavoriteCountry extends React.Component {
 
   componentDidMount() {
     const localStorageCountries = window.localStorage.getItem("savedCountries");
-    const savedCountriesParsed = JSON.parse(localStorageCountries);
+    const savedCountriesParsed = JSON.parse(localStorageCountries)
+    console.log(savedCountriesParsed);
     this.setState({ savedCountries: savedCountriesParsed });
   }
 

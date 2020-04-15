@@ -11,7 +11,6 @@ class CountryList extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log(this.state.selectedCountriesList)
     window.localStorage.setItem(
       "savedCountries", JSON.stringify(this.state.selectedCountriesList)
     );
@@ -20,10 +19,11 @@ class CountryList extends React.Component {
   checkItem(e) {
     const selectedCountry = e.target.id;
     const checked = e.target.checked
+    console.log(checked)
    if(checked){
+    localStorage.setItem(selectedCountry,checked)
     this.setState((prevState) => ({
-      selectedCountriesList: [...prevState.selectedCountriesList, selectedCountry],
-    
+      selectedCountriesList: [...prevState.selectedCountriesList, selectedCountry],  
     }))
   }else{
     var selectedCountryList = [...this.state.selectedCountriesList]; // make a separate copy of the selectedCountryList
@@ -32,6 +32,7 @@ class CountryList extends React.Component {
       selectedCountryList.splice(indexOfRemovedCountry, 1);
       this.setState({selectedCountriesList: selectedCountryList});
     }
+    localStorage.setItem("savedCountries",JSON.stringify(selectedCountryList))
   }
   }
 
@@ -57,7 +58,9 @@ class CountryList extends React.Component {
                   <input
                     id={country.name}
                     type="checkbox"
-                    onChange={(e) => this.checkItem(e)}
+                    onChange={(e) => this.checkItem(e)
+                    }
+                    defaultChecked={localStorage.getItem(country.name)}
                   ></input>
                 </td>
               </tr>
