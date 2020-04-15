@@ -11,24 +11,33 @@ class CountryList extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log(this.state.selectedCountriesList);
+    console.log(this.state.selectedCountriesList)
     window.localStorage.setItem(
-      "savedCountries",
-      JSON.stringify(this.state.selectedCountriesList)
+      "savedCountries", JSON.stringify(this.state.selectedCountriesList)
     );
   }
 
   checkItem(e) {
     const selectedCountry = e.target.id;
+    const checked = e.target.checked
+   if(checked){
     this.setState((prevState) => ({
       selectedCountriesList: [...prevState.selectedCountriesList, selectedCountry],
-      selectedCountry:selectedCountry
-    }));
+    
+    }))
+  }else{
+    var selectedCountryList = [...this.state.selectedCountriesList]; // make a separate copy of the selectedCountryList
+    var indexOfRemovedCountry = selectedCountryList.indexOf(e.target.id)
+    if (indexOfRemovedCountry !== -1) {
+      selectedCountryList.splice(indexOfRemovedCountry, 1);
+      this.setState({selectedCountriesList: selectedCountryList});
+    }
+  }
   }
 
   render() {
     const { countries } = this.props;
-    const { selectedCountry, selectedCountriesList } = this.state;
+    const { selectedCountriesList } = this.state;
     return (
       <div>
       <div className="table_container">

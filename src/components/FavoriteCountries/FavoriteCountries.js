@@ -27,9 +27,9 @@ class FavoriteCountry extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {savedCountries == null ? (
+            {!savedCountries? (
               <tr className="no_data">
-              No data to display...
+              No saved countries...
               </tr>
             ) : (   
               savedCountries.map((country) => (
