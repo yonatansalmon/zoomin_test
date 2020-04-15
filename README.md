@@ -1,5 +1,5 @@
 ## Installation (write the following in the command line)
-1) git clone https://github.com/yonatansalmon/zoomin
+1) git clone https://github.com/yonatansalmon/zoomin_test
 2) cd zoomin
 3) npm i
 4) npm start
