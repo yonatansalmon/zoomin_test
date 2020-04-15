@@ -4,11 +4,17 @@
     align-items: center;
     justify-content: center;
 } */
+
 .selected_countries{
     overflow-wrap: break-word;
     color:green;
     width: 400px;
     font-size: 12px;
+}
+
+.flags{
+  width: 15px;
+  height: 10px;
 }
 
 table, th, td {

@@ -51,7 +51,6 @@
 .main_container{
   display: flex;
   justify-content: space-evenly;
-  align-items: baseline;
   padding-top: 4%;
 }
 

@@ -1,14 +1,15 @@
-import axios from "axios";
+import axios from 'axios';
 
-export function getTweet() {
-  return axios.get(
-    `https://itc-bootcamp-19-dot-charcha-dev.appspot.com/tweet/`
-  );
+export async function getCountries(url) {
+   try {
+      const res = await axios.get(url);
+
+      return {
+         countries: res.data,
+      };
+   } catch (err) {
+      return {
+         err: err.message,
+      };
+   }
 }
-
-// export function postTweet(newTweet) {
-//   return axios.post(
-//     "https://itc-bootcamp-19-dot-charcha-dev.appspot.com/tweet/",
-//     { tweet: newTweet }
-//   );
-// }
