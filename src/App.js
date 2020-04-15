@@ -28,6 +28,8 @@ class App extends React.Component {
       "https://restcountries.eu/rest/v2/regionalbloc/usan"
     );
 
+    console.log(res);
+
     if (res.err) {
       this.setState({
         serverError: res.err,
