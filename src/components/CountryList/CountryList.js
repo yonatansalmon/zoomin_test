@@ -3,10 +3,9 @@ import './CountryList.css';
 
 function CountryList(props) {
    const { countries, selectedCountries, toggleCountry } = props;
-
    return (
-      <div>
-         <div className='table_container'>
+   
+         
             <table className='darkTable'>
                <thead>
                   <tr>
@@ -34,8 +33,8 @@ function CountryList(props) {
                   ))}
                </tbody>
             </table>
-         </div>
-      </div>
+       
+  
    );
 }
 

@@ -1,17 +1,4 @@
 
-/* .table_container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
-.selected_countries{
-    overflow-wrap: break-word;
-    color:green;
-    width: 400px;
-    font-size: 12px;
-}
-
 .flags{
   width: 15px;
   height: 10px;
@@ -29,8 +16,8 @@ table.darkTable {
   font-family: "Arial Black", Gadget, sans-serif;
   border: 2px solid #000000;
   background-color: #4A4A4A;
-  width: 400px;
-  height: 200px;
+  width: 40vw;
+  height:100%;
   text-align: center;
   border-collapse: collapse;
 }

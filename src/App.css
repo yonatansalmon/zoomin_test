@@ -8,6 +8,10 @@
   background-color: #15202b;
 }
 
+.loading_message{
+  color: green
+}
+
 .App {
   text-align: center;
 }

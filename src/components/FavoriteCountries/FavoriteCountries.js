@@ -4,7 +4,7 @@ import './FavoriteCountries.css';
 function FavoriteCountry(props) {
    const { selectedCountries } = props;
    return (
-      <div className='table_container'>
+ 
          <table className='purpleHorizon'>
             <thead>
                <tr>
@@ -13,7 +13,9 @@ function FavoriteCountry(props) {
             </thead>
             <tbody>
                {selectedCountries.length === 0 ? (
-                  <tr className='no_data'>No saved countries...</tr>
+                  <tr >
+                    <td className='no_data'> No saved countries...</td>
+                  </tr>
                ) : (
                   selectedCountries.map(country => (
                      <tr key={country}>
@@ -23,7 +25,7 @@ function FavoriteCountry(props) {
                )}
             </tbody>
          </table>
-      </div>
+    
    );
 }
 

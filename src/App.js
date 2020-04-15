@@ -27,23 +27,21 @@ class App extends React.Component {
     const res = await getCountries(
       "https://restcountries.eu/rest/v2/regionalbloc/usan"
     );
-    console.log(res)
 
     if (res.err) {
-       this.setState({
+      this.setState({
         serverError: res.err,
       });
-    }else{
-    this.setState({
-      countries: res.countries,
-      loading: false,
-    });
-  }
+    } else {
+      this.setState({
+        countries: res.countries,
+        loading: false,
+      });
+    }
   }
 
   loadFromLocalStorage() {
     let saveItems = localStorage.getItem("selectedCountries");
-
     if (saveItems) {
       saveItems = JSON.parse(saveItems);
       this.setState({
@@ -84,7 +82,7 @@ class App extends React.Component {
 
         <div className="main_container">
           {loading ? (
-            <div>loading..</div>
+            <div className="loading_message">loading..</div>
           ) : (
             <CountryList
               countries={countries}
