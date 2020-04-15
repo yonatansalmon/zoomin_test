@@ -41,11 +41,11 @@ class App extends React.Component {
   }
 
   loadFromLocalStorage() {
-    let saveItems = localStorage.getItem("selectedCountries");
-    if (saveItems) {
-      saveItems = JSON.parse(saveItems);
+    let savedItems = localStorage.getItem("selectedCountries");
+    if (savedItems) {
+      savedItems = JSON.parse(savedItems);
       this.setState({
-        selectedCountries: saveItems,
+        selectedCountries: savedItems,
       });
     }
   }
